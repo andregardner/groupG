@@ -1,44 +1,26 @@
 import java.util.Random;
 import java.util.Scanner;
-public class Guessingwords {
+public class Guessingwordsunfinished {
     public static void main(String []args)
     {
-        Scanner scan = new Scanner();
-        char c = "W";
+        int score = 0;
+        Math.random()*25;
+        int apples = Math.random()*25;
+        char rletter =  RandomGenerator(1:25);
+        System.out.println("What's your word? ");
+        String length = scan.nextString();
+        if (length.charAt(0)=rletter){
+
+
+        Scanner scan = new Scanner(word);
+        char c = 'W';
         int a = c;
         System.out.println(a-64);
-
-        Random randomGenerator = new Random();
-            int rand = 0, tries=5;
+            
             while (true)
             {
-            rand = randomGenerator.nextInt(11);
-            if(rand !=0) break;
+            char game = 'Y';
+            if(game !='Y') break;
             }
-            System.out.println(rand);
-
-            int intRandom=0;
-            Scanner inputRandom = new Scanner(System.in); // Create a Scanner object
-
-            do
-            {
-            System.out.println("The next letter is ");
-            intRandom = Integer.parseInt(inputRandom.nextLine()); // Read user input & convert to int
-            tries--;
-            }
-            while (intRandom !=rand && tries!=0);
-            if (intRandom == rand)
-            {
-            System.out.println("Good Job!");
-            }
-            else if (tries == 0)
-            {
-            System.out.println("Try again, pal!");
-            }
-
-            inputRandom.close();
-                        }
-
-            
-                        
-            }
+          
+            }}}
