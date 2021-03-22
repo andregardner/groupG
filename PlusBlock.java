@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 public class PlusBlock {
-    private int width;
-    private int height;
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -12,10 +10,10 @@ public class PlusBlock {
         int height = scan.nextInt();
 
         for (int counter = 1; counter <= height; counter++) {
-            if (0 > (counter * 2 - height) || 2 < (counter * 2 - height)) {
+            if (counter!=height/2+1) {
 
                 for (int counter2 = 1; counter2 <= width; counter2++) {
-                    if (0 > (counter2 * 2 - width) || 2 < (counter2 * 2 - width)) {
+                    if (counter2 != width/2+1) {
                         System.out.print("#");
 
                     } else {
