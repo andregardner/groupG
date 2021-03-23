@@ -3,24 +3,58 @@ import java.util.Scanner;
 public class Guessingwordsunfinished {
     public static void main(String []args)
     {
-        int score = 0;
-        Math.random()*25;
-        int apples = Math.random()*25;
-        char rletter =  RandomGenerator(1:25);
+        
+        Random generator = new Random();
+        char randomletter = (char)(generator.nextInt(26) + 'a');
+
+        System.out.println(randomletter);
+        Scanner inputWord = new Scanner(System.in); // Create a Scanner object
+        String userWord;
+        Integer score=0,wordLength=0,currentScore=0,previousScore=0;
+        Boolean ascendingOrder=false, multiplicationEligible = true;
         System.out.println("What's your word? ");
-        String length = scan.nextString();
-        if (length.charAt(0)=rletter){
-
-
-        Scanner scan = new Scanner(word);
-        char c = 'W';
-        int a = c;
-        System.out.println(a-64);
-            
-            while (true)
+        userWord = inputWord.nextLine();
+        System.out.println(userWord);
+        if (userWord.charAt(0) != randomletter)
             {
-            char game = 'Y';
-            if(game !='Y') break;
+            score = 0;
+            System.out.println("The word must start with the given letter" );
             }
-          
-            }}}
+        else if (userWord.charAt(0) == randomletter)
+            {
+            wordLength=userWord.length();
+            System.out.println(wordLength.toString());
+            multiplicationEligible=false;
+            }
+        
+            for (int i=0; i<wordLength; i++)
+            {
+                currentScore = Character.getNumericValue(userWord.charAt(i));
+                System.out.println(currentScore.toString());
+                score = score + currentScore;
+
+                if (currentScore>previousScore && multiplicationEligible)
+                {
+                    ascendingOrder = true;
+                    previousScore=currentScore;
+                    System.out.println("counting up");
+                }
+                else if (currentScore<previousScore)
+                {
+                    ascendingOrder = false;
+                    multiplicationEligible = false;
+                    previousScore=currentScore;
+                    System.out.println("descending score");
+                }
+            }
+                if (multiplicationEligible)
+
+                {
+                    score = score*3;
+                    System.out.println("An exceptional word");
+                }
+                System.out.println(score.toString());
+
+                inputWord.close();
+                
+            }}
