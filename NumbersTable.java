@@ -10,7 +10,7 @@ public class NumbersTable
 
         Scanner scan = new Scanner(System.in);
         value = scan.nextInt();
-        return value;
+        return value; 
     }
     public static void main (String[] Args)
     {
